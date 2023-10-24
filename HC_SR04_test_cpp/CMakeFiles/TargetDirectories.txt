@@ -1,0 +1,3 @@
+/home/pjunes/Projects/HC_SR04_test_cpp/CMakeFiles/rebuild_cache.dir
+/home/pjunes/Projects/HC_SR04_test_cpp/CMakeFiles/edit_cache.dir
+/home/pjunes/Projects/HC_SR04_test_cpp/CMakeFiles/HC_SR04_test.dir

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pjunes/Projects/HC_SR04_test_cpp/main.cpp
+iostream
+-
+string
+-
+wiringPi.h
+-
+time.h
+-
+
