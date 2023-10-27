@@ -6,8 +6,8 @@
 #define START_STOP  27
 #define CW_CCW      17
 
-// #define ENCODER_1   27
-// #define ENCODER_2   22
+#define ENCODER_1   5
+#define ENCODER_2   6
 
 #define BUTTON_1_IN   20
 #define BUTTON_1_OUT  21
@@ -22,6 +22,7 @@
 #define CW_CMD          3
 #define CCW_CMD         4
 #define PHYSICAL_CMD    5
+#define ENCODER_CMD     6
 
 #define EXIT_CMD        0
 
@@ -32,6 +33,7 @@ int ccw_motor();
 
 bool start_stop = true;
 bool cw_ccw = true;
+bool encoder_log = false;
 
 int main() {
     std::cout << "Hello World!!\n";
@@ -50,8 +52,8 @@ int main() {
     pinMode(START_STOP, OUTPUT);
     pinMode(CW_CCW,     OUTPUT);
 
-    // pinMode(ENCODER_1, INPUT);
-    // pinMode(ENCODER_2, INPUT);
+    pinMode(ENCODER_1, INPUT);
+    pinMode(ENCODER_2, INPUT);
 
     pinMode(BUTTON_1_IN,    INPUT);
     pinMode(BUTTON_1_OUT,   OUTPUT);
@@ -74,13 +76,14 @@ int main() {
     digitalWrite(BUTTON_1_OUT,   1);
     digitalWrite(BUTTON_2_OUT,   1);
 
-    std::string welcome_msg = "1 : start\n2 : stop\n3 : cw\n4 : ccw\n5 : physical\n0 : exit\n";
+    std::string welcome_msg = "1 : start\n2 : stop\n3 : cw\n4 : ccw\n5 : physical\n6 : Encoder Log\n0 : exit\n";
     std::string error_msg = "unknown cmd\n";
     std::string start_msg = "START\n";
     std::string stop_msg = "STOP\n";
     std::string cw_msg = "CW\n";
     std::string ccw_msg = "CCW\n";
     std::string physical_msg = "PHYSICAL\n";
+    std::string encoder_msg = "ENCODER LOG ON/OFF\n";
 
     std::string exit_msg = "EXIT\n";
 
@@ -114,6 +117,26 @@ int main() {
     while(cmd != 0) {
         std::cout << welcome_msg << "Enter CMD : ";
         std::cin >> cmd;
+
+        if(start_stop && encoder_log) {
+            for (int i = 0; i < 100; i++) {
+                if (digitalRead(ENCODER_1) == 1) {
+                    std::cout << "1 ";
+                }
+                else {
+                    std::cout << "0 ";
+                }
+
+                if (digitalRead(ENCODER_2) == 1) {
+                    std::cout << "1\n";
+                }
+                else {
+                    std::cout << "0\n";
+                }
+
+                delay(10);
+            }
+        }
 
         switch(cmd) {
             case START_CMD:
@@ -155,6 +178,13 @@ int main() {
                     }
                     delay(100);
                 }
+                break;
+
+            case ENCODER_CMD:
+                std::cout << encoder_msg;
+                if (encoder_log) encoder_log = false;
+                else encoder_log = true;
+
                 break;
 
             default:
