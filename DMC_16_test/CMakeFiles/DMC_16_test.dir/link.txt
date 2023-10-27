@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/DMC_16_test.dir/main.cpp.o -o bin/DMC_16_test  -Wl,-rpath,/usr/local/lib /usr/local/lib/libwiringPi.so 

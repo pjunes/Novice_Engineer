@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pjunes/Projects/DMC_16_test/main.cpp
+iostream
+-
+wiringPi.h
+-
+time.h
+-
+string
+-
+
