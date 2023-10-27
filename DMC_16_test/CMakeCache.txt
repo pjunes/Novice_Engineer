@@ -215,12 +215,6 @@ DMC_16_proj_BINARY_DIR:STATIC=/home/pjunes/Projects/DMC_16_test
 //Value Computed by CMake
 DMC_16_proj_SOURCE_DIR:STATIC=/home/pjunes/Projects/DMC_16_test
 
-//Value Computed by CMake
-Project_BINARY_DIR:STATIC=/home/pjunes/Projects/DMC_16_test
-
-//Value Computed by CMake
-Project_SOURCE_DIR:STATIC=/home/pjunes/Projects/DMC_16_test
-
 //Path to a library.
 wiringPi_lib:FILEPATH=/usr/local/lib/libwiringPi.so
 
