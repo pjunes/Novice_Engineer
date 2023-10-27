@@ -15,6 +15,8 @@
 #define BUTTON_2_IN   19
 #define BUTTON_2_OUT  26
 
+#define PWM0          18
+
 #define START_CMD       1
 #define STOP_CMD        2
 #define CW_CMD          3
@@ -40,6 +42,9 @@ int main() {
     }
     std::cout << "Setup Wiring Pi\n";
 
+    pwmSetMode(PWM_MODE_MS);
+    std::cout << "Setup PWM Mode\n";
+
     // pinMode 설정
 
     pinMode(START_STOP, OUTPUT);
@@ -53,7 +58,13 @@ int main() {
     pinMode(BUTTON_2_IN,    INPUT);
     pinMode(BUTTON_2_OUT,   OUTPUT);
 
+    pinMode(PWM0, PWM_OUTPUT);
+
     std::cout << "Setup Pin Mode\n";
+
+    // setup PWM
+
+    pwmSetRange(1024); // PWM 생성 범위를 설정 (기본값 : 1024)
 
     // 초기화
 
@@ -74,6 +85,29 @@ int main() {
     std::string exit_msg = "EXIT\n";
 
     std::cout << "Initialized\n";
+
+    std::cout << "PWM TEST\n";
+    
+    /*
+
+    start_motor();
+
+    delay(2000);
+    pwmWrite(PWM0, 256);
+    delay(2000);
+    pwmWrite(PWM0, 512);
+    delay(2000);
+    pwmWrite(PWM0, 1024);
+    delay(2000);
+    pwmWrite(PWM0, 128);
+    delay(2000);
+
+    stop_motor();
+
+    */
+
+
+    
 
     int cmd = 1;
     
@@ -177,5 +211,5 @@ int ccw_motor() {
 /*
 cmake CMakeLists.txt
 make
-./bin/DMC_16_test 
+sudo ./bin/DMC_16_test 
 */
