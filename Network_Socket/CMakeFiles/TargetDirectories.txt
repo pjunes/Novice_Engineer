@@ -1,0 +1,3 @@
+/home/pjunes/Projects/Network_Socket/CMakeFiles/rebuild_cache.dir
+/home/pjunes/Projects/Network_Socket/CMakeFiles/edit_cache.dir
+/home/pjunes/Projects/Network_Socket/CMakeFiles/Network_Socket_test.dir

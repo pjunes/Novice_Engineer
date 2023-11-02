@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pjunes/Projects/Network_Socket/main.cpp
+stdio.h
+-
+iostream
+-
+string.h
+-
+sys/socket.h
+-
+arpa/inet.h
+-
+unistd.h
+-
+
